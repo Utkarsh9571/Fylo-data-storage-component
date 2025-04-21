@@ -1,0 +1,239 @@
+:root{
+    /*primary*/
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+    /*neutral*/
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    justify-content: center;
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 26em;
+    max-height: fit-content;
+    font-family: Raleway, serif;
+    position: relative;
+    padding: 1em;
+}
+
+.upper-card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Dark-Blue);
+    padding: 3em;
+    border-radius: 1em;
+    border-top-right-radius: 8em;
+    margin-bottom: 1em;
+}
+.logo img{
+    width: 55%;
+}
+.apps{
+    display: flex;
+    gap: 1em;
+    margin-top: 2.25em;
+}
+#document{
+    width: 110%;
+    height: auto;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1.05em 1.1em;
+    border-radius: 0.75em;
+}
+#folder{
+    width: 110%;
+    height: auto;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1.2em 1em;
+    border-radius: 0.75em;
+}
+#upload{
+    width: 115%;
+    height: auto;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1.3em 1em;
+    border-radius: 0.75em;
+}
+
+.lower-card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Dark-Blue);
+    padding: 2.5em;
+    padding-bottom: 4em;
+    border-radius: 1em;
+}
+.lower-card h1{
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: auto 1em;
+    color: var(--Pale-Blue);
+}
+.data { 
+    display: flex; 
+    justify-content: space-between;
+    color: var(--Pale-Blue);
+    font-size: 1em;
+    font-weight: 500;
+}
+.bar{
+    background-color: rgba(20,32,74,255);
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    border-radius: 1.5em;
+    height: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.2em;
+}
+.bar .inner-bar{
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: 1em;
+    width: 81.5%;
+    border-radius: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 0.2em;
+}
+.bar .inner-bar .white-ball{
+    background-color: rgb(248, 235, 235);
+    border-radius: 50%;
+    width: 0.75em;
+    height: 0.75em;
+}
+
+.floating-card{
+    display: flex;
+    background-color: white;
+    width: fit-content;
+    padding: 1.25em 1.75em; border-radius: 1em;
+    margin: 0 auto;
+    align-items: center;
+    /*position: absolute;*/
+    margin-top: -3em;
+}
+.floating-card h1{
+    font-size: 3em;
+}
+.floating-card h2{
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: var(--Grayish-Blue);
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-left: 1em;
+}
+
+@media (min-width:60em){
+    body{
+        background-image: url(./images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        background-color: var(--Very-Dark-Blue);
+    }
+    
+    .container{
+        flex-direction: row;
+        max-width: 60em;
+        max-height: fit-content;
+        position: relative;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .upper-card{
+        margin: 1em;
+    }
+    
+    .lower-card{
+        padding: 2em;
+        height: fit-content;
+        margin: 1em;
+        border-radius: 0.75em;
+    }
+    .lower-card h1{
+        margin: 0 0;
+    }
+
+    .bar{
+        margin-top: 1em;
+        width: 25em;
+    }
+
+    .floating-card{
+        position: absolute;
+        padding: 1em;
+        bottom: 12em;
+        right: 3em;
+        border-radius: 0.75em;
+    }
+    .floating-card h1{
+        font-size: 2.5em;
+    }
+    .floating-card h2{
+        font-size: 0.8em;
+    }
+    .floating-card::after{
+        content: "";
+        position: absolute;
+        bottom: -3.2em;
+        left: 77.5%;
+        border-top: 4em solid white;
+        border-left: 2.5em solid transparent;
+    }
+}
+
+@media (min-width:90em){
+    .container{
+        max-width: 90em;
+    }
+
+    .upper-card{
+        padding-right: 10em;
+    }
+
+    .lower-card{
+        padding: 2.5em;
+    }
+    .lower-card h1{
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+    .bar{
+        width: 32em;
+    }
+
+    .floating-card{
+        bottom: 11em;
+        margin-right: 2em;
+    }
+    .floating-card::after{
+        bottom: -2em;
+        left: 77.5%;
+        border-top: 3em solid white;
+        border-left: 2.5em solid transparent;
+    }
+}
